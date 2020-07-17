@@ -49,7 +49,7 @@ class Song
     genre_count = {}
     
     @@genres.each |genre| do
-      if genre_count.keys.include?(genre)
+      if genre_count.keys.include?(genre) do
         genre_count[genre]++
       else
         genre_count[genre] = 1
