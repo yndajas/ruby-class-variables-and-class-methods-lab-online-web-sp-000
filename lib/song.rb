@@ -24,7 +24,7 @@ class Song
   def self.artists
     unique_artists = []
     
-    @@artists.each |artist| do
+    @@artists.each do |artist|
       if unique_artists.none? {|unique_artist| unique_artist == artist}
         unique_artists << artist
       end
