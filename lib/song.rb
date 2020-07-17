@@ -14,10 +14,7 @@ class Song
     @genre = genre
     
     @@genres << genre
-    
-    # if @@genres.none? {|existing_genre| existing_genre == genre} do
-    #   @@genres << genre
-    # end
+    @@artists << artist
   end
   
   def self.count
@@ -25,15 +22,36 @@ class Song
   end
   
   def self.artists
-    @@artists
+    unique_artists = []
+    
+    @@artists.each |artist| do
+      if unique_artists.none? {|unique_artist| unique_artist == artist} do
+        unique_artists << artist
+      end
+    end
+
+    unique_artists
   end
   
   def self.genres
-    @@genres
+    unique_genres = []
+    
+    @@genres.each |genre| do
+      if unique_genres.none? {|unique_genre| unique_genre == genre} do
+        unique_genres << genre
+      end
+    end
+
+    unique_genres
   end
   
   def self.genre_count
-    @@genre_count
+    genre_count = {}
+    
+    @@genres.each |genre| do
+      if genre_count.keys.include
+      end
+    end
   end
   
   def self.artist_count
