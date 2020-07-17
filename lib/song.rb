@@ -1,3 +1,5 @@
+require 'pry'
+
 class Song
   
   attr_accessor :name, :artist, :genre
@@ -49,6 +51,7 @@ class Song
     genre_count = {}
     
     @@genres.each do |genre|
+      binding.pry
       if genre_count.keys.include?(genre)
         genre_count[genre]++
       else
