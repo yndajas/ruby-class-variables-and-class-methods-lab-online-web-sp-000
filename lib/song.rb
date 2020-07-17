@@ -5,9 +5,7 @@ class Song
   @@count = 0
   @@artists = []
   @@genres = []
-  @@genre_count = {}
-  @@artist_count = {}
-  
+
   def initialize(name, artist, genre)
     @@count++
     
@@ -15,8 +13,11 @@ class Song
     @artist = artist
     @genre = genre
     
-    if @@genres.none? {|existing_genre| existing_genre == genre}
+    @@genres << genre
     
+    # if @@genres.none? {|existing_genre| existing_genre == genre} do
+    #   @@genres << genre
+    # end
   end
   
   def self.count
