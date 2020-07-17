@@ -10,11 +10,12 @@ class Song
   
   def initialize(name, artist, genre)
     @@count++
+    
     @name = name
     @artist = artist
     @genre = genre
     
-    if @@genres.none?
+    if @@genres.none? {|existing_genre| existing_genre == genre}
     
   end
   
